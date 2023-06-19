@@ -1,0 +1,59 @@
+.tms{
+    border: 1px solid blue;
+    margin: 20px auto;
+    width: 800px;
+    margin-top: 20px;
+    height:600px;
+}
+.tms-app{
+    margin-left: 20px;
+    margin-bottom :20px;
+}
+.task-head{
+    display: flex;
+    margin-left:20px;
+    column-gap: 30px;
+}
+.task-box{
+    padding: 0 30px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task-form{
+    margin: 50px 0 20px 20px;
+}
+.tms-form{
+     display: flex;
+     column-gap: 30px;
+    align-items: flex-end;
+}
+.tms-form-text{
+   display: flex;
+   flex-direction: column;
+   
+}
+.tms-button{
+   background-color: #008CBA;
+   border:none;
+   color: antiquewhite;
+   border-radius: 3px;
+   padding:4px 8px;
+}
+input[type=text],input[type=number]{
+    border: 1px solid blue;
+    padding:4px;
+}
+.tms-table{
+    width:100%;
+    margin-left:20px;
+}
+table {
+    width:100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid #008CBA;
+}
+/* table thead tr th { text-align: left; } */

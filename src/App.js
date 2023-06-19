@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import TaskManagement from "./components/taskManagement";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+const App=()=> {
+  return ( 
+    <div>
+         <TaskManagement />
     </div>
-  );
+  )
 }
 
 export default App;
