@@ -1,59 +1,133 @@
-.tms{
-    border: 1px solid blue;
-    margin: 20px auto;
-    width: 800px;
-    margin-top: 20px;
-    height:600px;
+.tms {
+  border: 1px solid #008cba;
+  margin: auto;
+  width: 50%;
+  margin-top: 70px;
 }
-.tms-app{
-    margin-left: 20px;
-    margin-bottom :20px;
+.tms-app {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
-.task-head{
-    display: flex;
-    margin-left:20px;
-    column-gap: 30px;
+.task-head {
+  display: flex;
+  margin-left: 20px;
+  column-gap: 30px;
 }
-.task-box{
-    padding: 0 30px;
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.task-box {
+  padding: 0 50px;
+  border: 1px solid #008cba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.task-form{
-    margin: 50px 0 20px 20px;
+.task-form {
+  margin: 50px 0 20px 20px;
 }
-.tms-form{
-     display: flex;
-     column-gap: 30px;
-    align-items: flex-end;
+.tms-form {
+  display: flex;
+  column-gap: 30px;
+  align-items: flex-end;
 }
-.tms-form-text{
-   display: flex;
-   flex-direction: column;
-   
+.tms-modal {
+  border: 1px solid red;
+  margin: 9px 10px 10px 0;
+  background-color: red;
+  color: white;
+  width: 48%;
+  border-radius: 2px;
 }
-.tms-button{
-   background-color: #008CBA;
-   border:none;
-   color: antiquewhite;
-   border-radius: 3px;
-   padding:4px 8px;
+.tms-modal-content {
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-between;
 }
-input[type=text],input[type=number]{
-    border: 1px solid blue;
-    padding:4px;
+.tms-modal-delete {
+  background-color: #efeff4;
+  color: #f10b0b;
+  border: 1px solid white;
+  border-radius: 2px;
 }
-.tms-table{
-    width:100%;
-    margin-left:20px;
+.tms-appreciatiopn-modal {
+  position: absolute;
+  height: 126px;
+  top: 20px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  background-color: green;
+}
+.tms-apreciation-content {
+  color: #ecdae7;
+  text-align: center;
+}
+.tms-ok {
+  padding: 6px 30px;
+  margin: 5px;
+  background-color: #dd4b1b;
+  color: white;
+  border: none;
+}
+.tms-form-text {
+  display: flex;
+  flex-direction: column;
+}
+.tms-form-text input {
+  width: 200px;
+}
+
+.tms-button {
+  background-color: #008cba;
+  border: none;
+  color: antiquewhite;
+  border-radius: 3px;
+  padding: 6px 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #008cba;
+  padding: 6px;
+  outline: none;
+}
+
+.tms-table {
+  margin-top: 50px;
+  padding: 20px;
 }
 table {
-    width:100%;
+  width: 100%;
   border-collapse: collapse;
 }
-table, th, td {
-  border: 1px solid #008CBA;
+table,
+th,
+td {
+  border: 1px solid #008cba;
 }
-/* table thead tr th { text-align: left; } */
+th,
+td {
+  padding-top: 6px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+.tms-table-header1 {
+  width: 50%;
+}
+thead,
+tr {
+  text-align: left;
+}
+.deleteButton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: red;
+  padding: 0;
+  border-bottom: 1px solid red;
+}
