@@ -16,9 +16,16 @@ const TaskManagement = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [num,setNum]=useState("")
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (taskName && taskTime) {
+    if (taskName === "" && taskTime === "") {
+      setError("Please fill the TaskTitle  and Hours");
+    } else if (taskName === "") {
+      setError("please fill the taskTitle");
+    } else if (taskTime === "") {
+      setError("please fill the taskTime");
+    } else if (taskName && taskTime) {
       const newTodo = {
         name: taskName,
         time: taskTime,
@@ -31,7 +38,7 @@ const TaskManagement = () => {
     }
   };
   const taskDelete = (i) => {
-    setShowModal(true);
+    //setShowModal(true);
     setTname(
       tname.filter((item, index) => {
         return tname.indexOf(item) !== i;
@@ -50,11 +57,21 @@ const TaskManagement = () => {
     }, 0);
     console.log(total);
     setTotalHours(total.toString().padStart(3, "0"));
-    setDays(
-      parseInt(total / 8)
-        .toString()
-        .padStart(3, "0")
-    );
+     const numb= (total % 8) === 0 ? (total / 8).toFixed(2) :parseInt(total / 8).toString().padStart(3, "0")
+     console.log(numb)      
+        setDays(
+          total % 8 === 0
+            ? parseInt(total / 8)
+                .toString()
+                .padStart(3, "0")
+            : (total / 8).toFixed(2)
+        );
+
+    // setDays(
+    //   parseInt(total / 8)
+    //     .toString()
+    //     .padStart(3, "0")
+    // );
   }, [tname]);
   const handleFocus = () => {
     setIsFocused(true);
@@ -66,8 +83,15 @@ const TaskManagement = () => {
     setError("");
   };
   const appreciationModal = () => {
+    taskDelete(num);
     setShowModal(false);
   };
+  const closeModalPopup=()=>{
+     setShowModal(false);
+  }
+  const taskDeleteModal=()=>{
+        setShowModal(true)
+  }
 
   return (
     <div className="tms">
@@ -142,22 +166,24 @@ const TaskManagement = () => {
           )}
         </form>
       </div>
+      <div className="modal-box">
+        {showModal && (
+          <div className="tms-appreciatiopn-modal">
+            <div className="tms-apreciation-content">
+              <h3 className="tms-pop-message">
+                Do you want to delete the task.if yes press Ok
+              </h3>
 
-      {showModal && (
-        <div className="tms-appreciatiopn-modal">
-          <div className="tms-apreciation-content">
-            <h3>
-              Great job! You completed the task successfully. Your hard work and
-              dedication are truly commendable!
-            </h3>
-            <p>task has been completed.</p>
-            <button className="tms-ok" onClick={appreciationModal}>
-              OK
-            </button>
+              <button className="tms-ok" onClick={appreciationModal}>
+                OK
+              </button>
+              <button className="tms-cancel" onClick={closeModalPopup}>
+                cancel
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-
+        )}
+      </div>
       <div className="tms-table">
         <h2>Todo list</h2>
         <table>
@@ -179,7 +205,9 @@ const TaskManagement = () => {
                       <button
                         className="deleteButton"
                         onClick={() => {
-                          taskDelete(index);
+                          taskDeleteModal();
+                          setNum(index);
+                          //taskDelete(index);
                         }}
                       >
                         Delete

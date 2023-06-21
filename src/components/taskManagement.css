@@ -1,7 +1,7 @@
 .tms {
   border: 1px solid #008cba;
   margin: auto;
-  width: 60%;
+  width: 65%;
   margin-top: 70px;
 }
 .tms-app {
@@ -50,25 +50,41 @@
 }
 .tms-appreciatiopn-modal {
   position: absolute;
-  height: 126px;
-  top: 20px;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
-  background-color: green;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: #fc441c;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .tms-apreciation-content {
   color: #ecdae7;
+  text-align: center;
+  padding:20px;
+}
+.tms-pop-message{
+  color:#ffffff;
   text-align: center;
 }
 .tms-ok {
   padding: 6px 30px;
   margin: 5px;
-  background-color: #dd4b1b;
+  background-color: #14f90c;
   color: white;
   border: none;
+}
+.tms-cancel{
+  padding: 6px 30px;
+  margin: 5px;
+  background-color: #f9570c;
+  color: white;
+  border: none;
+}
+
+.modal-box{
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  /* box-shadow: rgba(0, 132, 248, 0.48) 6px 2px 16px 0px, rgba(207, 207, 207, 0.8) -6px -2px 16px 0px; */
 }
 .tms-form-text {
   display: flex;
